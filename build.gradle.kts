@@ -33,6 +33,8 @@ repositories {
     maven {
         url = uri("https://packages.confluent.io/maven")
     }
+    google()
+    gradlePluginPortal()
 }
 
 dependencies {
@@ -43,17 +45,17 @@ dependencies {
     //implementation("org.springframework.boot:spring-boot-starter-scheduling")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     runtimeOnly("org.postgresql:postgresql")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
+    //testImplementation("org.springframework.boot:spring-boot-starter-test")
+    //testImplementation("org.springframework.security:spring-security-test")
 
     // Lombok
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 
     // Flyway
-    implementation("org.flywaydb:flyway-core")
+     implementation("org.flywaydb:flyway-core") //<- not required
     // DB versioning / migration
-    implementation("org.flywaydb:flyway-database-postgresql")
+    // implementation("org.flywaydb:flyway-database-postgresql")
 
     // SwaggerUI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
@@ -70,7 +72,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 
     // React (если используете Gradle для фронтенда)
-    implementation("org.webjars:react:17.0.2")
+    //implementation("org.webjars:react:17.0.2")
     implementation("org.webjars:webjars-locator:0.45")
 
     // Тестирование
