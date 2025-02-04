@@ -50,10 +50,11 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
 
-    // DB versioning / migration
-    implementation("org.flywaydb:flyway-database-postgresql")
     // Flyway
     implementation("org.flywaydb:flyway-core")
+    // DB versioning / migration
+    implementation("org.flywaydb:flyway-database-postgresql")
+
     // SwaggerUI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
         exclude(group = "io.swagger.core.v3", module = "swagger-annotations")
