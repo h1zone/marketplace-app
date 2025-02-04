@@ -66,6 +66,10 @@ dependencies {
     // JUnit 5 (опционально, если хотите явно указать версию)
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+
+    // React (если используете Gradle для фронтенда)
+    implementation("org.webjars:react:17.0.2")
+    implementation("org.webjars:webjars-locator:0.45")
 }
 
 tasks.withType<JavaCompile>().configureEach {
