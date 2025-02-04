@@ -11,9 +11,14 @@ version = "1.0.0"
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-        vendor = JvmVendorSpec.ADOPTIUM
+        languageVersion.set(JavaLanguageVersion.of(21))
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+        implementation.set(JvmImplementation.VENDOR_SPECIFIC)
     }
+}
+
+springBoot {
+    mainClass.set("com.marketplace.MarketplaceApplication") // Укажите ваш главный класс
 }
 
 idea {
@@ -25,6 +30,9 @@ idea {
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://packages.confluent.io/maven")
+    }
 }
 
 dependencies {
@@ -32,7 +40,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-scheduling")
+    //implementation("org.springframework.boot:spring-boot-starter-scheduling")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -43,7 +51,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     // DB versioning / migration
-    implementation("org.flywaydb:flyway-database-postgresql")
+    //implementation("org.flywaydb:flyway-database-postgresql")
 
     // SwaggerUI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
@@ -58,6 +66,13 @@ dependencies {
     // JUnit 5 (опционально, если хотите явно указать версию)
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    javaCompiler.set(javaToolchains.compilerFor {
+        languageVersion.set(JavaLanguageVersion.of(21))
+        vendor.set(JvmVendorSpec.ADOPTIUM)
+    })
 }
 
 tasks.test {
