@@ -51,8 +51,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     // DB versioning / migration
-    //implementation("org.flywaydb:flyway-database-postgresql")
-
+    implementation("org.flywaydb:flyway-database-postgresql")
+    // Flyway
+    implementation("org.flywaydb:flyway-core")
     // SwaggerUI
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
         exclude(group = "io.swagger.core.v3", module = "swagger-annotations")
@@ -70,6 +71,10 @@ dependencies {
     // React (если используете Gradle для фронтенда)
     implementation("org.webjars:react:17.0.2")
     implementation("org.webjars:webjars-locator:0.45")
+
+    // Тестирование
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
 }
 
 tasks.withType<JavaCompile>().configureEach {
