@@ -1,3 +1,16 @@
+CREATE TABLE IF NOT EXISTS ${flyway:defaultSchema}.users (
+    id UUID NOT NULL,
+    created_date TIMESTAMP NOT NULL,
+    modified_date TIMESTAMP,
+
+    username VARCHAR NOT NULL,
+    password VARCHAR NOT NULL,
+    role VARCHAR NOT NULL,
+
+    PRIMARY KEY (id)
+);
+
+
 CREATE TABLE IF NOT EXISTS ${flyway:defaultSchema}.good (
     id UUID NOT NULL,
     created_date TIMESTAMP NOT NULL,
