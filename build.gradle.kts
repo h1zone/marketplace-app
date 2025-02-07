@@ -17,6 +17,7 @@ java {
     }
 }
 
+
 springBoot {
     mainClass.set("com.marketplace.MarketplaceApplication") // Укажите ваш главный класс
 }
