@@ -25,7 +25,7 @@ import static com.marketplace.config.OpenApiConfig.*;
 @Slf4j
 @Tag(name = OpenApiConfig.GROUP_USERS)
 @RestController
-//@RequestMapping("/api")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class UserController {
     private final CustomUserDetailsService customUserDetailsService;
@@ -34,7 +34,7 @@ public class UserController {
             summary = "Get all relations of ID type to AID-type or AID type to ID-type",
             description = "Extracts the relations aidType and idType."
     )
-    @GetMapping(path = "/api/users",
+    @GetMapping(path = "/users",
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @ApiResponses(
