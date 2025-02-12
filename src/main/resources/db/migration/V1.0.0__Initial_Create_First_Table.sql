@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS ${flyway:defaultSchema}.users (
 );
 
 
-CREATE TABLE IF NOT EXISTS ${flyway:defaultSchema}.good (
+CREATE TABLE IF NOT EXISTS ${flyway:defaultSchema}.goods (
     id UUID NOT NULL,
     created_date TIMESTAMP NOT NULL,
     modified_date TIMESTAMP,
