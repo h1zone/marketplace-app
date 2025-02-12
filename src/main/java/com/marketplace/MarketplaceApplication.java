@@ -8,7 +8,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@Import(InfoConfiguration.class)
 //@EnableScheduling
 public class MarketplaceApplication {
 

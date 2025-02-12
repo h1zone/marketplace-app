@@ -1,9 +1,15 @@
 package com.marketplace.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
+
+import lombok.*;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.Instant;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
@@ -12,10 +18,21 @@ import javax.persistence.Id;
 @Getter
 public class User {
 
+    @EqualsAndHashCode.Exclude
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "id")
+    private UUID id;
+
+    @EqualsAndHashCode.Exclude
+    @Column(name = "created_date", nullable = false, updatable = false)
+    @CreatedDate
+    private Instant createdDate;
+
+    @EqualsAndHashCode.Exclude
+    @Column(name = "modified_date")
+    @LastModifiedDate
+    private Instant modifiedDate;
 
     @Column(name = "username", nullable = false)
     private String username;
@@ -25,11 +42,11 @@ public class User {
     private String role; // Роль пользователя (например, "ROLE_USER", "ROLE_ADMIN")
 
     // Геттеры и сеттеры
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
