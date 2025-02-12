@@ -22,10 +22,5 @@ public class MarketplaceApplication {
         return new RestTemplate();
     }
 }
-// листинг старого мэйна
-/*
-package org.example;
 
-//TIP To <b>Run</b> c
- */
 

@@ -35,7 +35,7 @@ public class User {
     private Instant modifiedDate;
 
     @Column(name = "username", nullable = false)
-    private String username;
+    private String userName;
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "role", nullable = false)
@@ -51,11 +51,11 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.userName = username;
     }
 
     public String getPassword() {

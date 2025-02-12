@@ -56,30 +56,21 @@ public class OpenApiDocumentation {
     public static final String GROUP_ACTION_LOGS = "Action Logs";
 
 
+    @Bean
+    public GroupedOpenApi apiDefault() {
+        return GroupedOpenApi.builder()
+                .group("api-default") // Имя группы
+                .pathsToMatch("/api/**") // Пути для сканирования
+                .packagesToScan("com.marketplace.controller") // Пакеты для сканирования
+                .build();
+    }
 
-
-
-
-    /**
-     * General OpenAPI UI configuration
-     *
-     * @return OpenAPI configuration
-     */
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title(getClass().getPackage().getImplementationTitle())
-                        .version(getClass().getPackage().getImplementationVersion())
-                        .description("<BSCC Endpoints>")
-                        .contact(new Contact().name("BSCC-Team").email("plus_team_bscc_intern@abatplus.de"))
-                )
-                .tags(List.of(
-                        new Tag().name(GROUP_USERS),
-                        new Tag().name(GROUP_ROOT_DATA),
-                        new Tag().name(GROUP_ORDERS),
-                        new Tag().name(GROUP_ACTION_LOGS)
-                ));
+                        .title("Marketplace API")
+                        .version("1.0")
+                        .description("API documentation for Marketplace"));
     }
-
 }
