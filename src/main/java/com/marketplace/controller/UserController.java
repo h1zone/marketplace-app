@@ -1,6 +1,6 @@
 package com.marketplace.controller;
 
-import com.marketplace.base.configuration.OpenApiDocumentation;
+import com.marketplace.config.OpenApiConfig;
 import com.marketplace.entity.User;
 import com.marketplace.service.CustomUserDetailsService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.marketplace.base.configuration.OpenApiDocumentation.*;
+import static com.marketplace.config.OpenApiConfig.*;
 
 @Slf4j
-@Tag(name = OpenApiDocumentation.GROUP_USERS)
+@Tag(name = OpenApiConfig.GROUP_USERS)
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor

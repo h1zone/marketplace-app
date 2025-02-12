@@ -65,7 +65,7 @@ dependencies {
     //implementation("io.swagger.core.v3:swagger-annotations:2.2.26")
 
     // SwaggerUI
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0")
     implementation("io.swagger.core.v3:swagger-annotations:2.2.26")
 
     // Mockito для тестов

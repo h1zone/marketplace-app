@@ -1,29 +1,20 @@
-package com.marketplace.base.configuration;
+package com.marketplace.config;
 
-import io.swagger.v3.oas.annotations.enums.ParameterIn;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.media.StringSchema;
-import io.swagger.v3.oas.models.parameters.Parameter;
-import io.swagger.v3.oas.models.tags.Tag;
-import org.springdoc.core.customizers.OperationCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Configuration
 @SecurityScheme(
-        name = OpenApiDocumentation.SECURITY_SCHEME_BEARER_AUTHENTICATION,
+        name = com.marketplace.config.OpenApiConfig.SECURITY_SCHEME_BEARER_AUTHENTICATION,
         type = SecuritySchemeType.HTTP,
         bearerFormat = "JWT",
         scheme = "bearer")
-public class OpenApiDocumentation {
+public class OpenApiConfig {
     public static final String SECURITY_SCHEME_BEARER_AUTHENTICATION = "Bearer_Authentication";
     public static final String HTTP_STATUS_CODE_OK = "200";
     public static final String HTTP_STATUS_CODE_OK_DESCRIPTION = "The request completed successfully.";
