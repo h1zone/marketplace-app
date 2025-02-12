@@ -9,12 +9,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+/*
 @SecurityScheme(
         name = com.marketplace.config.OpenApiConfig.SECURITY_SCHEME_BEARER_AUTHENTICATION,
         type = SecuritySchemeType.HTTP,
         bearerFormat = "JWT",
         scheme = "bearer")
+
+ */
 public class OpenApiConfig {
+
     public static final String SECURITY_SCHEME_BEARER_AUTHENTICATION = "Bearer_Authentication";
     public static final String HTTP_STATUS_CODE_OK = "200";
     public static final String HTTP_STATUS_CODE_OK_DESCRIPTION = "The request completed successfully.";
