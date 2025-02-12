@@ -59,9 +59,13 @@ dependencies {
     // implementation("org.flywaydb:flyway-database-postgresql")
 
     // SwaggerUI
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
-        exclude(group = "io.swagger.core.v3", module = "swagger-annotations")
-    }
+    //implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0") {
+    //    exclude(group = "io.swagger.core.v3", module = "swagger-annotations")
+    //}
+    //implementation("io.swagger.core.v3:swagger-annotations:2.2.26")
+
+    // SwaggerUI
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
     implementation("io.swagger.core.v3:swagger-annotations:2.2.26")
 
     // Mockito для тестов
@@ -69,8 +73,8 @@ dependencies {
     testImplementation("org.mockito:mockito-junit-jupiter:5.5.0")
 
     // JUnit 5 (опционально, если хотите явно указать версию)
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+    //testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
+    //testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 
     // React (если используете Gradle для фронтенда)
     //implementation("org.webjars:react:17.0.2")
